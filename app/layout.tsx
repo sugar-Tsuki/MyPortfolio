@@ -27,73 +27,29 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-              <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur shadow-md">
+       <div className="font-[Poppins] bg-pink-50 text-purple-700 scroll-smooth">
+
+      <nav className="fixed top-0 w-full bg-white shadow-md z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-purple-600">My Portfolio</h1>
-          <div className="hidden md:flex gap-6 text-sm font-medium">
-            <a href="#about" className="hover:text-purple-500">About</a>
-            <a href="#projects" className="hover:text-purple-500">Projects</a>
-            <a href="#contact" className="hover:text-purple-500">Contact</a>
+          <h1 className="font-bold text-xl">Tsuki 🎀</h1>
+
+
+          <div className="hidden md:flex gap-6 text-sm font-semibold">
+            {["home","about","hobbies","skills","gallery","contact"].map((id) => (
+              <a key={id} href={`#${id}`} className="hover:text-pink-500">
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            ))}
           </div>
-        </div>
-      </nav>
+</div>
+
+         </nav>
+         </div>
         {children}
-        
-        <footer className="bg-linear-to-r from-purple-600 to-pink-500 text-white mt-20">
-  <div className="max-w-7xl mx-auto px-6 py-12">
+         <footer className="py-6 text-center bg-white">
+        <p className="text-sm">© 2025 Tsuki • Made with 💜</p>
+      </footer>
 
-    <div className="grid gap-10 md:grid-cols-3">
-
-     
-      <div>
-        <h2 className="text-2xl font-bold">Tsuki.dev</h2>
-        <p className="text-white/90 text-sm mt-3">
-          Soft & creative web designs  
-          made with 💜 & 🎀
-        </p>
-      </div>
-
-
-      <div>
-        <h3 className="font-semibold mb-4">Pages</h3>
-        <ul className="space-y-2 text-sm">
-          <li><a href="#about" className="hover:underline">About</a></li>
-          <li><a href="#projects" className="hover:underline">Projects</a></li>
-          <li><a href="#contact" className="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-
-     
-      <div>
-        <h3 className="font-semibold mb-4">Contact Me</h3>
-        <div className="flex gap-4 text-2xl">
-          <a href="#" className="hover:scale-110 transition">📧</a>
-          <a href="#" className="hover:scale-110 transition">📷</a>
-          <a href="#" className="hover:scale-110 transition">💬</a>
-        </div>
-        <p className="text-sm mt-4">
-         Tsuki@email.com
-        </p>
-      </div>
-
-    </div>
-
-    <div className="text-center text-xs text-white/80 mt-10">
-      © 2025 Tsuki • Made with 💜 & 🎀
-    </div>
-
-  </div>
-</footer>
-
-
-<a href="#contact"
-   className="fixed bottom-6 right-6 z-50
-          bg-linear-to-r from-pink-500 to-purple-600
-          text-white px-6 py-3 rounded-full
-          shadow-xl hover:shadow-2xl
-          flex items-center gap-2
-          transition hover:scale-110">
-</a>
   
       </body>
     </html>
